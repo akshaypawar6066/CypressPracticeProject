@@ -1,0 +1,9 @@
+{
+    "validUsername" : "Admin",
+    "validPassword" : "admin123",
+    "ExpectedHomePageUrl": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
+
+    "inValidUsername" : "AD",
+    "inValidPassword" : "ADKB",
+    "expectedMsgOnInavlidCredentails": "Invalid credentials"
+}

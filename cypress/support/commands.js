@@ -67,3 +67,41 @@ Cypress.Commands.add('getTextOntoTheAlert', () => {
 
 
 
+//Login to the Application
+Cypress.Commands.add('loginToTheApplication', (username, password) =>
+{
+  cy.get("input[placeholder='Username']").type(username);
+  cy.get("input[placeholder='Password']").type(password, {delay:200});
+  cy.get("button[type='submit']").click();
+});
+
+
+Cypress.Commands.add('VerfyLoginWithCorrectCredentails', (expectedUrl)=>
+{
+
+   if(cy.url().should('eq', expectedUrl))
+    {
+      cy.log("Able to Login the application using correct credentails.")
+    }  
+    else{
+      cy.log("Not Able to login the pplication using correct credentials")
+      cy.fail("Failed to login with correct credentials.");
+
+    }
+})
+
+
+Cypress.Commands.add('VerfyLoginWithInCorrectCredentails', (expectedMessage)=>
+  {
+  
+    if(cy.get(".oxd-text.oxd-text--p.oxd-alert-content-text").should('have.text', expectedMessage))
+      {
+        cy.log("User not able to login with incorrecr credentails.")
+      }
+      else{
+        cy.log("User able to login the application using incorrect credenatials.")
+        cy.fail('Able to login the application using incorrect credentails.')
+      }
+  })
+
+

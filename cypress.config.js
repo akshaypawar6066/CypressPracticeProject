@@ -15,15 +15,16 @@ module.exports = defineConfig({
       require('cypress-mochawesome-reporter/plugin')(on);   //For HTML Report
     },
 
-    env : {
-      
-      
+    env: {
+      Username: "Admin",
+      Password: "admin123",
+      AppUrl: "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
     },
 
-    retries : {
+    retries: {
 
-      runMode: 1,
-      openMode: 2
+      runMode: 0,
+      openMode: 0
     },
 
 
@@ -31,7 +32,7 @@ module.exports = defineConfig({
     experimentalRunAllSpecs: true,
     //video: true
     includeShadowDom: true,
-    watchForFileChanges: false
+    watchForFileChanges: true
   },
 
 });
