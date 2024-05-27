@@ -1,0 +1,6 @@
+{
+  "expectedAlertText": "Your file has now been uploaded!",
+  "expectedRowLength":40,
+  "expectedColLength": 9,
+  "expectedCellText": "Medium"
+}
